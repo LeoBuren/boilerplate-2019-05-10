@@ -1,0 +1,34 @@
+main {
+    & > section {
+        position: relative;
+
+        div.container {
+            width: 100%;
+            padding: 0 1.5rem;
+            @include mq(small) {
+                padding: 0;
+                width: $width;
+            }
+            
+            height: 100%;
+            margin: auto;
+        }
+    }
+    & > h1 {
+        margin: $padding 0 0 1.5rem;
+        @include mq(medium) {
+            margin: calc(#{$padding} * 2) 0 0 calc((100% - #{$width}) / 2);
+            span {
+                color: hsl(210, 100%, 90%);
+            }
+        }
+        
+        font-size: 2em;
+        @include mq(small) {
+            font-size: 2.8em;
+        }
+        
+        position: relative;
+        padding-bottom: 1em;
+    }
+}
